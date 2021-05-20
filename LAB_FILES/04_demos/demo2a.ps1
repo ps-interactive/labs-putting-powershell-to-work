@@ -8,7 +8,7 @@ Get-Vegetable C* | select-object Name,IsPeeled
 
 cls
 
-cd C:\work
+cd c:\users\administrator\desktop\Lab_Files\04_demos\
 #create 2 test files
 get-date | Out-file test.txt
 get-date | Out-file test2.txt
@@ -29,14 +29,14 @@ cls
 #there are other ways to accomplish this but I
 #hope this demonstrates the foreach approach
 help Get-Volume -parameter cimsession
-get-content c:\scripts\servers.txt
+get-content c:\users\administrator\desktop\Lab_Files\04_demos\servers.txt
 
 #this fails
-get-content c:\scripts\servers.txt | Get-Volume
+get-content c:\users\administrator\desktop\Lab_Files\04_demos\servers.txt | Get-Volume
 
 #I'll save results to a variable
 
-$c = get-content c:\scripts\servers.txt |
+$c = get-content c:\users\administrator\desktop\Lab_Files\04_demos\servers.txt |
 foreach { get-volume -drive c -cimsession $_ }
  
 $c

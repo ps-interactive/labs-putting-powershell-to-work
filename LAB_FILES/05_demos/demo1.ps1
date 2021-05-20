@@ -19,12 +19,12 @@ get-service m* -Exclude ms*
 
 cls
 
-dir c:\scripts\*.ps1
+dir c:\users\administrator\desktop\Lab_Files\scripts\ *.ps1
 #you will see Filter parameters
-dir c:\scripts -filter *.ps1
+dir c:\users\administrator\desktop\Lab_Files\scripts\ -filter *.ps1
 #this doesn't work that way you think
-dir c:\scripts -include *.ps1
-dir c:\scripts -include *.ps1 -exclude trial.ps1 -Recurse
+dir c:\users\administrator\desktop\Lab_Files\scripts\ -include *.ps1
+dir c:\users\administrator\desktop\Lab_Files\scripts\ -include *.ps1 -exclude trial.ps1 -Recurse
 cls
 #parameters might depend on where you are running the command
 #this fails

@@ -16,13 +16,13 @@ Get-Service w* | where {$_.Status -eq 'running'}
 $now = Get-Date
 #find PowerShell files created in the last 7 days
 #remember, you can use any object property you find with Get-member
-Get-ChildItem c:\scripts\*.ps1 | Where {$_.CreationTime -ge $now.AddDays(-7) }
+Get-ChildItem c:\users\administrator\desktop\Lab_Files\scripts\*.ps1 | Where {$_.CreationTime -ge $now.AddDays(-7) }
 
 cls
 
 #you can use any thing in the scriptblock that will give a True or False result
 #you can use your own computername multiple times for testing
-get-content C:\scripts\servers.txt |
+get-content c:\users\administrator\desktop\Lab_Files\scripts\servers.txt |
 where { Test-Connection -ComputerName $_ -count 2 -Quiet }
 
 cls
@@ -33,7 +33,7 @@ Get-Ciminstance -ClassName win32_process | Select -first 5
 
 #the wrong way
 
-$servers =  Get-Content C:\scripts\servers.txt
+$servers =  Get-Content c:\users\administrator\desktop\Lab_Files\scripts\servers.txt
 Measure-Command {
  Get-CimInstance win32_process -ComputerName $servers |
  Where WorkingSetSize -ge 50MB
